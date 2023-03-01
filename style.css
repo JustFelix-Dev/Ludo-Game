@@ -1,0 +1,422 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: 'Luckiest Guy', cursive;
+    background-image: linear-gradient(50deg,red,blue,yellow,green);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.ludo--wrapper{
+    width: 30rem;
+    height: 30rem;
+    border: 1px solid black;
+    position: relative;
+    box-shadow: 0 0 5px 3px black;
+    background-color: white;
+}
+
+/* PLAYER RED(DEFAULT) */
+
+.ludo--group{
+    position:absolute;
+    top:0;
+    left:0;
+    display: flex;
+    width: 12rem;
+    flex-wrap: wrap;
+}
+
+.ludo--home{
+    width: 12rem;
+    height: 12rem;
+    background-color: red;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ludo--home--list{
+    width: 100%;
+    background-color: white;
+    border: 2px solid gray;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap:wrap;
+}
+.ludo--home--list li{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ludo--circle{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: red;
+    box-shadow: inset 0 0 4px 3px gray;
+}
+.ludo--route{
+    width: 100%;
+    position: relative;
+}
+.ludo--route--list{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ludo--route--list li{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333;
+
+}
+
+.ludo--route--list li:nth-child(2),
+.ludo--route--list li:nth-child(8),
+.ludo--route--list li:nth-child(9),
+.ludo--route--list li:nth-child(10),
+.ludo--route--list li:nth-child(11),
+.ludo--route--list li:nth-child(12){
+    background-color: red;
+}
+.yellow--group{
+    position:absolute;
+    bottom:0;
+    right:0;
+    transform: rotate(180deg);
+    display: flex;
+    width: 12rem;
+    flex-wrap: wrap;
+}
+.yellow--group .ludo--home{
+    width: 12rem;
+    height: 12rem;
+    background-color:yellow;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.yellow--group .ludo--circle{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: yellow;
+    box-shadow: inset 0 0 4px 3px gray;
+}
+
+.yellow--group .ludo--route--list li:nth-child(2),
+.yellow--group .ludo--route--list li:nth-child(8),
+.yellow--group .ludo--route--list li:nth-child(9),
+.yellow--group .ludo--route--list li:nth-child(10),
+.yellow--group .ludo--route--list li:nth-child(11),
+.yellow--group .ludo--route--list li:nth-child(12){
+    background-color: yellow;
+}
+.yellow--group .ludo--card--goal{
+    position: absolute;
+    width: 3rem;
+    top: 12rem;
+    right:-3rem;
+    background-color: white;
+    z-index:99;
+    }
+    .yellow--group .ludo--card--goal::before{
+        position: absolute;
+        content: '';
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid yellow;
+        z-index: 99;
+    
+    }
+    .yellow--group .ludo--card--goal::after{
+        position: absolute;
+        content: '';
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid black;
+    }
+    .yellow--group .fas{
+        color: yellow;
+    }
+    .yellow--group .fa-regular{
+        transform: rotate(50deg);
+    }
+.fas{
+    color: red;
+}
+.ludo--card--goal{
+position: absolute;
+width: 3rem;
+top: 12rem;
+right:-3rem;
+background-color: white;
+z-index:99;
+}
+.ludo--card--goal::before{
+    position: absolute;
+    content: '';
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    border-left: 3rem solid red;
+    z-index: 99;
+
+}
+.ludo--card--goal::after{
+    position: absolute;
+    content: '';
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    border-left: 3rem solid black;
+}
+
+/* PLAYER GREEN */
+
+.green--group{
+    position:absolute;
+    top:-3rem;
+    right:3rem;
+    transform: rotate(90deg);
+    display: flex;
+    width: 12rem;
+    flex-wrap: wrap;
+}
+.green--group .ludo--home{
+    width: 12rem;
+    height: 12rem;
+    background-color:green;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.green--group .ludo--circle{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: green;
+    box-shadow: inset 0 0 4px 3px gray;
+}
+
+.green--group .ludo--route--list li:nth-child(2),
+.green--group .ludo--route--list li:nth-child(8),
+.green--group .ludo--route--list li:nth-child(9),
+.green--group .ludo--route--list li:nth-child(10),
+.green--group .ludo--route--list li:nth-child(11),
+.green--group .ludo--route--list li:nth-child(12){
+    background-color: green;
+}
+.green--group .ludo--card--goal{
+    position: absolute;
+    width: 3rem;
+    top: 12rem;
+    right:-3rem;
+    background-color: white;
+    z-index:99;
+    }
+    .green--group .ludo--card--goal::before{
+        position: absolute;
+        content: '';
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid green;
+        z-index: 99;
+    
+    }
+    .green--group .ludo--card--goal::after{
+        position: absolute;
+        content: '';
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid black;
+    }
+    .green--group .fas{
+        color: green;
+    }
+    .green--group .fa-regular{
+        transform: rotate(50deg);
+    }
+
+    /* PLAYER YELLOW */
+
+.yellow--group{
+    position:absolute;
+    bottom:0;
+    right:0;
+    transform: rotate(180deg);
+    display: flex;
+    width: 12rem;
+    flex-wrap: wrap;
+}
+.yellow--group .ludo--home{
+    width: 12rem;
+    height: 12rem;
+    background-color:yellow;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.yellow--group .ludo--circle{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: yellow;
+    box-shadow: inset 0 0 4px 3px gray;
+}
+
+.yellow--group .ludo--route--list li:nth-child(2),
+.yellow--group .ludo--route--list li:nth-child(8),
+.yellow--group .ludo--route--list li:nth-child(9),
+.yellow--group .ludo--route--list li:nth-child(10),
+.yellow--group .ludo--route--list li:nth-child(11),
+.yellow--group .ludo--route--list li:nth-child(12){
+    background-color: yellow;
+}
+.yellow--group .ludo--card--goal{
+    position: absolute;
+    width: 3rem;
+    top: 12rem;
+    right:-3rem;
+    background-color: white;
+    z-index:99;
+    }
+    .yellow--group .ludo--card--goal::before{
+        position: absolute;
+        content: '';
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid yellow;
+        z-index: 99;
+    
+    }
+    .yellow--group .ludo--card--goal::after{
+        position: absolute;
+        content: '';
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid black;
+    }
+    .yellow--group .fas{
+        color: yellow;
+    }
+    .yellow--group .fa-regular{
+        transform: rotate(50deg);
+    }
+
+    
+    /* PLAYER BLUE */
+
+    .blue--group{
+        position:absolute;
+        bottom:-3rem;
+        left:3rem;
+        transform: rotate(-90deg);
+        display: flex;
+        width: 12rem;
+        flex-wrap: wrap;
+    }
+    .blue--group .ludo--home{
+        width: 12rem;
+        height: 12rem;
+        background-color:blue;
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .blue--group .ludo--circle{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        background-color: blue;
+        box-shadow: inset 0 0 4px 3px gray;
+    }
+    
+    .blue--group .ludo--route--list li:nth-child(2),
+    .blue--group .ludo--route--list li:nth-child(8),
+    .blue--group .ludo--route--list li:nth-child(9),
+    .blue--group .ludo--route--list li:nth-child(10),
+    .blue--group .ludo--route--list li:nth-child(11),
+    .blue--group .ludo--route--list li:nth-child(12){
+        background-color: blue;
+    }
+    .blue--group .ludo--card--goal{
+        position: absolute;
+        width: 3rem;
+        top: 12rem;
+        right:-3rem;
+        background-color: white;
+        z-index:99;
+        }
+        .blue--group .ludo--card--goal::before{
+            position: absolute;
+            content: '';
+            border-top: 3rem solid transparent;
+            border-bottom: 3rem solid transparent;
+            border-left: 3rem solid blue;
+            z-index: 99;
+        
+        }
+        .blue--group .ludo--card--goal::after{
+            position: absolute;
+            content: '';
+            border-top: 3rem solid transparent;
+            border-bottom: 3rem solid transparent;
+            border-left: 3rem solid black;
+        }
+        .blue--group .fas{
+            color: blue;
+        }
+        .blue--group .fa-regular{
+            transform: rotate(50deg);
+        }
+
+        /* Responsiveness */
+
+        @media screen and (max-width:800px){
+            html{
+                font-size: 13px;
+                min-width: 350px;
+            }
+        }
+        @media screen and (max-width:630px){
+            html{
+                font-size: 11px;
+                min-width: 350px;
+            }
+        }
+        @media screen and (max-width:450px){
+            html{
+                font-size: 8px;
+                min-width: 350px;
+            }
+        }
+        
